@@ -1,0 +1,27 @@
+name: tweet
+
+on:
+  push:
+    branches:
+      - main
+
+  schedule:
+    - cron: '0 */30 * ? * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.7]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: cron setup for twitter
+      uses: satak/webrequest-action@master
+      with:
+        url: ${{ secrets.URL }}
+        method: GET
+        username: ${{ secrets.BASIC_AUTH_UN }}
+        password: ${{ secrets.BASIC_AUTH_PW }}
