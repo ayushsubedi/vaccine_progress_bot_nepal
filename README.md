@@ -1,5 +1,7 @@
 # Installation
 
+https://vaccinenepal.herokuapp.com/
+
 #### Clone the repository
 
 `https://github.com/ayushsubedi/vaccine_progress_bot/`
