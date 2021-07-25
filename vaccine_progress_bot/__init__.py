@@ -4,7 +4,6 @@ from dotenv import load_dotenv
 from os.path import join, dirname
 from flask_basicauth import BasicAuth
 
-
 application = Flask(__name__)
 basic_auth = BasicAuth(application)
 
@@ -20,9 +19,5 @@ application.config['API_KEY'] = environ.get('API_KEY')
 application.config['API_SECRET_KEY'] = environ.get('API_SECRET_KEY')
 application.config['ACCESS_TOKEN'] = environ.get('ACCESS_TOKEN')
 application.config['ACCESS_TOKEN_SECRET'] = environ.get('ACCESS_TOKEN_SECRET')
-
-# html to img
-application.config['HCTI_API_USER_ID'] = environ.get('HCTI_API_USER_ID')
-application.config['HCTI_API_KEY'] = environ.get('HCTI_API_KEY')
 
 from vaccine_progress_bot import routes
