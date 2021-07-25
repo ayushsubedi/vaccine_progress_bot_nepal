@@ -8,5 +8,5 @@ def hello():
 
 @application.route('/tweet')
 def tweet():
-    // TODO tweet
+    # TODO tweet
     return 'basic auth working'
