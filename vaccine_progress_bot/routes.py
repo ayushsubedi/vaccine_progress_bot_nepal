@@ -7,6 +7,7 @@ import pandas as pd
 SOURCE = 'https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/country_data/Nepal.csv'
 POPULATION = 29674920.0
 comp = ['█','░']
+
 progress_bar = {0: '░░░░░░░░░░░░░░░░░░░░░░░░░ 0%',
  1: '░░░░░░░░░░░░░░░░░░░░░░░░░ 1%',
  2: '█░░░░░░░░░░░░░░░░░░░░░░░░ 2%',
@@ -118,8 +119,16 @@ def hello():
 def get_data():
     data = pd.read_csv(SOURCE).iloc[-1].to_dict()
     percentage_fully_vaccinated = 100*data.get('people_fully_vaccinated')/POPULATION
-    return progress_bar.get(int(percentage_fully_vaccinated)) + "\n" + str(round(percentage_fully_vaccinated, 4))+ '%' + ' --- ' + data.get('date')
-    return create_pb(int(percentage_fully_vaccinated), data.get('date'))
+    percentage_partially_vaccinated = 100*data.get('people_vaccinated')/POPULATION
+    final = "Fully Vaccinated\n" +\
+    progress_bar.get(int(percentage_fully_vaccinated)) +\
+    "\n\n" +\
+    "Partially Vaccinated\n" +\
+    progress_bar.get(int(percentage_partially_vaccinated)) +\
+    "\n" +\
+    ' latest data ---> ' + data.get('date')
+    return final
+    
 
 @application.route('/post_tweet')
 @basic_auth.required
