@@ -126,7 +126,7 @@ def get_data():
     "Partially Vaccinated\n" +\
     progress_bar.get(int(percentage_partially_vaccinated)) +\
     "\n" +\
-    ' latest data ---> ' + data.get('date')
+    ' Latest Data From ---> ' + data.get('date')
     return final
     
 
