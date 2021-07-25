@@ -1,12 +1,8 @@
 name: tweet
 
 on:
-  push:
-    branches:
-      - main
-
   schedule:
-    - cron: '0 14 * * *'
+    - cron: '0 5 * * *'
 
 jobs:
   build:
