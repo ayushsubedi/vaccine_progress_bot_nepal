@@ -1,4 +1,5 @@
 import tweepy
+import json
 from tweepy import OAuthHandler
 from vaccine_progress_bot import application
 
@@ -27,3 +28,8 @@ class TwitterClient(object):
     
     def post_tweet(self, text):
         self.api.update_status(text)
+
+    def get_last_tweet_date(self):
+        tweet = self.api.user_timeline(count=1)[0]
+        json_data = json.loads(json.dumps(tweet._json))
+        return json_data.get('text')[-10:]
