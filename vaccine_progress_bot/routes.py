@@ -29,13 +29,23 @@ def get_data():
     progress_bar.get(int(percentage_partially_vaccinated)) +" "+str(percentage_partially_vaccinated) +"%"+\
     "\n" +\
     ' Latest Data ---> ' + data.get('date')
-    return final
+    return final, str(data.get('date'))
     
 
 @application.route('/post_tweet')
 @basic_auth.required
 def post_tweet():
     twitter_client = TwitterClient()
-    tweet_text = get_data()
+    tweet_text, date_new = get_data()
+    date_old = twitter_client.get_last_tweet_date()
+    if (date_new == date_old):
+        return 'duplicate'
     twitter_client.post_tweet(tweet_text)
     return 'done'
+
+
+@application.route('/get_last_tweet_date')
+@basic_auth.required
+def get_last_tweet_date():
+    twitter_client = TwitterClient()
+    return twitter_client.get_last_tweet_date()
