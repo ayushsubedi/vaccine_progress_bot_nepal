@@ -5,7 +5,7 @@ from vaccine_progress_bot.helpers import progress_bar
 from flask import render_template
 import pandas as pd
 
-SOURCE = 'https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/country_data/Nepal.csv'
+SOURCE = 'https://github.com/owid/covid-19-data/blob/master/public/data/vaccinations/country_data/Nepal.csv?raw=True'
 
 # https://www.macrotrends.net/countries/NPL/nepal/population-growth-rate
 POPULATION = 29674920.0
