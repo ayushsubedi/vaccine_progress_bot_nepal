@@ -4,7 +4,7 @@
 
 #### Clone the repository
 
-`https://github.com/ayushsubedi/vaccine_progress_bot/`
+`https://github.com/ayushsubedi/vaccine_progress_bot_nepal/`
 
 
 #### CD into the cloned directory and create a virtualenv
