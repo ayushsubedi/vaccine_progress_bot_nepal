@@ -1,3 +1,6 @@
+# Twitter Page
+https://twitter.com/NepalVaccine
+
 # Installation
 
 ![](https://github.com/ayushsubedi/vaccine_progress_bot/blob/main/display.png)
