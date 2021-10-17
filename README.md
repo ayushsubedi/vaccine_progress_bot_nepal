@@ -1,4 +1,4 @@
-# Twitter Page
+# Twitter handle
 https://twitter.com/NepalVaccine
 
 # Installation
