@@ -1,7 +1,6 @@
 # Twitter handle
 
-Data Source: https://github.com/owid/covid-19-data/blob/master/public/data/vaccinations/country_data/Nepal.csv
-
+@NepalVaccine
 
 # Installation
 
